@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neon Payment Website Design System */
+
+@layer base {
+  :root {
+    /* Base colors for pure black theme */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    
+    /* Neon color palette */
+    --neon-red: 0 100% 50%;
+    --neon-red-glow: 0 100% 60%;
+    --neon-blue: 220 100% 50%;
+    --neon-blue-glow: 220 100% 60%;
+    --neon-pink: 320 100% 60%;
+    --neon-pink-glow: 320 100% 70%;
+    --neon-green: 120 100% 50%;
+    --neon-green-glow: 120 100% 60%;
+    --neon-orange: 30 100% 60%;
+    --neon-orange-glow: 30 100% 70%;
+    --neon-purple: 270 100% 60%;
+    --neon-purple-glow: 270 100% 70%;
+    
+    /* Card and surface colors */
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    
+    /* Interactive elements */
+    --primary: 320 100% 60%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 220 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Input and form elements */
+    --input: 0 0% 10%;
+    --input-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --ring: 320 100% 60%;
+    
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+    cursor: none;
+  }
+  
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+/* Custom cursor */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: all 0.1s ease;
+}
+
+/* Neon glow utilities */
+@layer utilities {
+  .neon-ring-red {
+    box-shadow: 
+      0 0 10px hsl(var(--neon-red)),
+      0 0 20px hsl(var(--neon-red)),
+      0 0 40px hsl(var(--neon-red)),
+      inset 0 0 10px hsl(var(--neon-red));
+    border: 2px solid hsl(var(--neon-red));
+  }
+  
+  .neon-blue-input {
+    background: hsl(var(--input));
+    border: 2px solid hsl(var(--neon-blue));
+    box-shadow: 
+      0 0 10px hsl(var(--neon-blue) / 0.3),
+      0 0 20px hsl(var(--neon-blue) / 0.2),
+      inset 0 0 10px hsl(var(--neon-blue) / 0.1);
+  }
+  
+  .neon-blue-input:focus {
+    box-shadow: 
+      0 0 15px hsl(var(--neon-blue) / 0.5),
+      0 0 30px hsl(var(--neon-blue) / 0.3),
+      0 0 45px hsl(var(--neon-blue) / 0.2),
+      inset 0 0 15px hsl(var(--neon-blue) / 0.1);
+  }
+  
+  .neon-pink-btn {
+    background: linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--neon-purple)));
+    border: 2px solid hsl(var(--neon-pink));
+    box-shadow: 
+      0 0 15px hsl(var(--neon-pink) / 0.5),
+      0 0 30px hsl(var(--neon-pink) / 0.3),
+      0 0 45px hsl(var(--neon-pink) / 0.2);
+    text-shadow: 0 0 10px hsl(var(--neon-pink));
+  }
+  
+  .neon-pink-btn:hover {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-pink) / 0.7),
+      0 0 40px hsl(var(--neon-pink) / 0.5),
+      0 0 60px hsl(var(--neon-pink) / 0.3);
+    transform: scale(1.05);
+  }
+  
+  .neon-green-card {
+    background: hsl(var(--card));
+    border: 2px solid hsl(var(--neon-green));
+    box-shadow: 
+      0 0 15px hsl(var(--neon-green) / 0.3),
+      0 0 30px hsl(var(--neon-green) / 0.2),
+      inset 0 0 10px hsl(var(--neon-green) / 0.05);
+  }
+  
+  .neon-green-card:hover {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-green) / 0.5),
+      0 0 40px hsl(var(--neon-green) / 0.3),
+      inset 0 0 15px hsl(var(--neon-green) / 0.1);
+  }
+  
+  .neon-orange-card {
+    background: hsl(var(--card));
+    border: 2px solid hsl(var(--neon-orange));
+    box-shadow: 
+      0 0 15px hsl(var(--neon-orange) / 0.3),
+      0 0 30px hsl(var(--neon-orange) / 0.2),
+      inset 0 0 10px hsl(var(--neon-orange) / 0.05);
+  }
+  
+  .neon-orange-card:hover {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-orange) / 0.5),
+      0 0 40px hsl(var(--neon-orange) / 0.3),
+      inset 0 0 15px hsl(var(--neon-orange) / 0.1);
+  }
+  
+  .neon-red-card {
+    background: hsl(var(--card));
+    border: 2px solid hsl(var(--neon-red));
+    box-shadow: 
+      0 0 15px hsl(var(--neon-red) / 0.3),
+      0 0 30px hsl(var(--neon-red) / 0.2),
+      inset 0 0 10px hsl(var(--neon-red) / 0.05);
+  }
+  
+  .neon-red-card:hover {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-red) / 0.5),
+      0 0 40px hsl(var(--neon-red) / 0.3),
+      inset 0 0 15px hsl(var(--neon-red) / 0.1);
+  }
+  
+  .neon-text-glow {
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse-glow {
+    from {
+      box-shadow: 
+        0 0 15px hsl(var(--neon-pink) / 0.5),
+        0 0 30px hsl(var(--neon-pink) / 0.3),
+        0 0 45px hsl(var(--neon-pink) / 0.2);
+    }
+    to {
+      box-shadow: 
+        0 0 25px hsl(var(--neon-pink) / 0.7),
+        0 0 50px hsl(var(--neon-pink) / 0.5),
+        0 0 75px hsl(var(--neon-pink) / 0.3);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
