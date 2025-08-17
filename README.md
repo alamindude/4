@@ -110,10 +110,10 @@ The project uses a comprehensive neon design system defined in `src/index.css`:
 2. Add your bKash sandbox credentials:
 
 ```env
-BKASH_USERNAME=01326251753
-BKASH_PASSWORD=2_KD>Q,75kC  
-BKASH_APP_KEY=pNsOtCmYA8gZln06mMlIvFSitc
-BKASH_APP_SECRET=edniKMfOGjuvKfkp5wY9y2wN8qEdsCDSVmGCQgRge4krgXsxsitK
+BKASH_USERNAME=
+BKASH_PASSWORD=2_
+BKASH_APP_KEY=
+BKASH_APP_SECRET=
 PORT=3001
 ```
 
